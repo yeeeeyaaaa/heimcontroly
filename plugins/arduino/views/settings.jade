@@ -27,6 +27,7 @@ div.container
                 option(value="sensor",      selected=(item.method == 'sensor'))   sensor
                 option(value="irremote",    selected=(item.method == 'irremote')) IR remote
                 option(value="led",         selected=(item.method == 'led'))      LED
+                option(value="wifi",         selected=(item.method == 'wifi'))       WIFI HTTP request
               div.switch-container
 
                 div.rcswitch(class=(item.method != 'rcswitch' ? 'hidden' : ''))
@@ -54,6 +55,14 @@ div.container
                   input(type="text", name="data[#{i}][formula]", placeholder="x*100-3.14", data-required="1", value=(item.formula ? item.formula : ''))
                   label(for="unit") Unit (optional):
                   input(type="text", name="data[#{i}][unit]", placeholder="°F", data-required="0", value=(item.unit ? item.unit : ''))
+                div.wifi.hidden
+                  label(for="host") Host:
+                  input(type="text", name="data[%i%][host]", placeholder="http://192.168.1.1", data-required="1")
+                  label(for="port") Port:
+                  input(type="text", name="data[%i%][port]", placeholder="8080", data-required="1")
+                  //label(for="port") Unit (optional):
+                  //input(type="text", name="data[%i%][unit]", placeholder="°F", data-required="0")
+      
                 div.irremote(class=(item.method != 'irremote' ? 'hidden' : ''))
                   label(for="irtype") IR Type:
                   select(name="data[#{i}][irtype]")
@@ -101,6 +110,7 @@ div.plugin-container.arduino.settings#template(style="display: none;")
       option(value="sensor") sensor
       option(value="irremote") IR remote
       option(value="led") LED
+      option(value="wifi") WIFI HTTP request
     div.switch-container
 
       div.rcswitch.hidden
@@ -129,6 +139,14 @@ div.plugin-container.arduino.settings#template(style="display: none;")
         input(type="text", name="data[%i%][formula]", placeholder="x*3.14-100", data-required="1")
         label(for="unit") Unit (optional):
         input(type="text", name="data[%i%][unit]", placeholder="°F", data-required="0")
+
+      div.wifi.hidden
+        label(for="host") Host:
+        input(type="text", name="data[%i%][host]", placeholder="http://192.168.1.1", data-required="1")
+        label(for="port") Port:
+        input(type="text", name="data[%i%][port]", placeholder="8080", data-required="1")
+        //label(for="port") Unit (optional):
+        //input(type="text", name="data[%i%][unit]", placeholder="°F", data-required="0")
       
       div.irremote.hidden
         label(for="irtype") IR Type:

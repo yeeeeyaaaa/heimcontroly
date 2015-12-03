@@ -42,6 +42,8 @@ each item in items
       p.description
         strong #{item.description}&nbsp; 
         span.muted PIN #{item.pin}
+        span.muted Host #{item.host}
+        span.muted Port #{item.port}
       div.large
         p
           span.value(data-id="#{item._id}") #{item.value}
