@@ -20,8 +20,8 @@ define([ 'duino' ], function(duino) {
     this.app = app;
     this.id = this.name.toLowerCase();
 
-    this.url = new duino.Url();
     this.board = new duino.Board();
+    this.url = new duino.Url();
     this.board.debug = true;
     function warnNoDuino(e) {
         console.warn("[WARNING] error while trying to connect to Arduino:")
