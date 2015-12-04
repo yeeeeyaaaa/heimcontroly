@@ -2,7 +2,7 @@ if (typeof define !== 'function') {
   var define = require('amdefine')(module);
 }
 
-define([ 'duino' ], function(duino) {
+define([ 'duino' ], define[ 'duinoy' ], function(duino, duinoy) {
 
   /**
    * Arduino Plugin. This plugin is able to control an Arduino that is attached to the USB port of the Raspberry PI
@@ -21,7 +21,7 @@ define([ 'duino' ], function(duino) {
     this.id = this.name.toLowerCase();
 
     this.board = new duino.Board();
-    this.url = new duino.Url();
+    this.url = new duinoy.Url();
     this.board.debug = true;
     function warnNoDuino(e) {
         console.warn("[WARNING] error while trying to connect to Arduino:")
