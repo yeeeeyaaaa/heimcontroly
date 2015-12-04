@@ -4,7 +4,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/ni-c/heimcontrol.js.git"
+    "url": "https://github.com/yeeeeyaaaa/heimcontroly.git"
   },
   "scripts": {
     "start": "node heimcontrol.js"
@@ -24,7 +24,7 @@
     "ping": "= 0.1.7",
     "wake_on_lan": "= 0.0.3",
     "delivery": "= 0.0.3",
-    "duino": "ni-c/duino#master",
+    "duino": "yeeeeyaaaa/duinoy#master",
     "piswitch": "^1.0.3",
     "ds18x20": "= 0.1.1"
   }
